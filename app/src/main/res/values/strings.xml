@@ -1,3 +1,10 @@
 <resources>
   <string name="app_name">Assignment5</string>
+  <string name="password_hint">Password</string>
+  <string name="username_hint">Username</string>
+  <string name="login_button">Login</string>
+  <string name="error">Incorrect Credentials</string>
+  <string name="price">$%1$s</string>
+  <string name="no_res">No products available</string>
+  <string name="api_err">Could not reach the API</string>
 </resources>
