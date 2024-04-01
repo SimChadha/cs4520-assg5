@@ -12,7 +12,6 @@ class DataViewModel(private val productDb: AppDatabase) : ViewModel(){
 
     val productDao = productDb.productDao()
 
-
     fun getProducts() {
         CoroutineScope(Dispatchers.IO).launch {
             try {

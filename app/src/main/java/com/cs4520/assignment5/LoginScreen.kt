@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -17,11 +18,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 
 @Composable
-fun LoginFields() {
+fun LoginFields(navController: NavController) {
     MaterialTheme {
         Surface (color = MaterialTheme.colors.background, modifier = Modifier.fillMaxSize()) {
             Column(
@@ -43,12 +46,14 @@ fun LoginFields() {
                     value = edit2Text.value,
                     placeholder = { Text(stringResource(R.string.password_hint)) },
                     onValueChange = { edit2Text.value = it },
-                    modifier = Modifier.padding(12.dp)
+                    modifier = Modifier.padding(12.dp),
+                    visualTransformation = PasswordVisualTransformation(),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
                 )
                 Button(
                     onClick = {
                               if (edit1Text.value == "admin" && edit2Text.value == "admin") {
-
+                                navController.navigate("productList")
                               } else {
                                   val toast = Toast.makeText(context, loginError, Toast.LENGTH_SHORT)
                                   toast.show()
@@ -62,8 +67,8 @@ fun LoginFields() {
     }
 }
 
-@Preview
-@Composable
-fun PreviewLoginFields() {
-    LoginFields()
-}
+//@Preview
+//@Composable
+//fun PreviewLoginFields() {
+//    LoginFields()
+//}

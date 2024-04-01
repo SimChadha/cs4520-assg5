@@ -7,4 +7,6 @@
   <string name="price">$%1$s</string>
   <string name="no_res">No products available</string>
   <string name="api_err">Could not reach the API</string>
+  <string name="equip_desc">Image of gym equipment</string>
+  <string name="food_desc">Image of fresh produce</string>
 </resources>
