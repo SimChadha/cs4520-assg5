@@ -82,12 +82,3 @@ fun ProductRow(product: Product) {
         }
     }
 }
-
-//@Preview
-//@Composable
-//fun PreviewProductScreen() {
-//    val products = ProductList()
-//    products.add(Product(0, "Dumbbell", "Equipment",null,12.0))
-//    products.add(Product(1, "Carrot", "Food","12-05-24",2.50))
-//    ProductScreen(products = products, ProductListViewModel(context = currentCompositionLocalContext))
-//}

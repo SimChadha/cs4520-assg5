@@ -11,8 +11,6 @@ class ProductListViewModel(private val context: Context): ViewModel() {
     var productList: MutableState<ProductList?> = mutableStateOf(null)
     var fetchDone: MutableState<Boolean> = mutableStateOf(false)
 
-    private lateinit var viewModel: DataViewModel
-
     init {
         val db = Room.databaseBuilder(
             context,
@@ -20,10 +18,9 @@ class ProductListViewModel(private val context: Context): ViewModel() {
         ).build()
         val workManager = WorkManager.getInstance(context)
         val vm = DataViewModel(db, workManager)
-        viewModel = vm
 
         // Observe when API call has completed
-        viewModel.products.observeForever { res ->
+        vm.products.observeForever { res ->
             fetchDone.value = false
             var productSet: ProductList = ProductList()
             if (res != null) {
@@ -35,6 +32,6 @@ class ProductListViewModel(private val context: Context): ViewModel() {
             fetchDone.value = true
         }
 
-        viewModel.getProducts()
+        vm.getProducts()
     }
 }

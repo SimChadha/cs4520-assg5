@@ -1,0 +1,9 @@
+Github link: https://github.com/SimChadha/cs4520-assg5
+
+Run project:
+To run this project, open the project in Android studio and select an emulator to run the app on.
+If not done already, clean the project. Before running the app, make sure you have run
+the proper gradle tasks when the IDE prompts at the top.
+From there, run the app from Android studio using the default configuration to start to app.
+The default configuration will run on the module Assignment4.app.main and will launch the
+default activity (or MainActivity if you'd prefer to specify).
