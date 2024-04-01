@@ -1,6 +1,5 @@
 package com.cs4520.assignment5
 
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.work.WorkManager

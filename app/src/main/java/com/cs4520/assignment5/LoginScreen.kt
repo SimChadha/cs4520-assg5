@@ -65,9 +65,3 @@ fun LoginFields(navController: NavController) {
         }
     }
 }
-
-//@Preview
-//@Composable
-//fun PreviewLoginFields() {
-//    LoginFields()
-//}
