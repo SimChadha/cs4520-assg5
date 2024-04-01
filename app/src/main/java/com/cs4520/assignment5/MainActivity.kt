@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
                     LoginFields(navController)
                 }
                 composable("productList") {
-                    ProductScreen(viewModel = ProductListViewModel(context))
+                    ProductScreen(context = context)
                 }
             }
         }

@@ -40,7 +40,6 @@ fun LoginFields(navController: NavController) {
                     placeholder = { Text(stringResource(R.string.username_hint)) },
                     onValueChange = { edit1Text.value = it },
                     modifier = Modifier.padding(12.dp)
-
                 )
                 TextField(
                     value = edit2Text.value,

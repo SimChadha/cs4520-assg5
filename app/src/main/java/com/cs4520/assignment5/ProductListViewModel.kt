@@ -5,6 +5,7 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.room.Room
+import androidx.work.WorkManager
 
 class ProductListViewModel(private val context: Context): ViewModel() {
     var productList: MutableState<ProductList?> = mutableStateOf(null)
@@ -17,7 +18,8 @@ class ProductListViewModel(private val context: Context): ViewModel() {
             context,
             AppDatabase::class.java, "product"
         ).build()
-        val vm = DataViewModel(db)
+        val workManager = WorkManager.getInstance(context)
+        val vm = DataViewModel(db, workManager)
         viewModel = vm
 
         // Observe when API call has completed

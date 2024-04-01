@@ -1,5 +1,6 @@
 package com.cs4520.assignment5
 
+import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -27,9 +28,10 @@ import androidx.compose.ui.res.stringResource
 
 
 @Composable
-fun ProductScreen(viewModel: ProductListViewModel) {
+fun ProductScreen(context: Context) {
     MaterialTheme {
         Surface(color = MaterialTheme.colors.background, modifier = Modifier.fillMaxSize()) {
+            val viewModel = ProductListViewModel(context = context)
             val productList by remember {
                 viewModel.productList
             }
